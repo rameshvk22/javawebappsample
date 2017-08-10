@@ -15,10 +15,10 @@ node {
   }
   
   stage('deploy') {
-    def webAppResourceGroup = '<myResourceGroup>'
-    def webAppName = '<app_name>'
-    def acrName = '<myRegistry>'
-    def imageName = 'calculator'
+    def webAppResourceGroup = 'rkuckiancloudrgp'
+    def webAppName = 'generic-asp'
+    def acrName = 'rkuckiancloudregistry.azurecr.io'
+    def imageName = 'generic-asp'
     // generate version, it's important to remove the trailing new line in git describe output
     def version = sh script: 'git describe | tr -d "\n"', returnStdout: true
     withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
